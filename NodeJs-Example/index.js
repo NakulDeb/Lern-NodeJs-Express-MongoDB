@@ -1,7 +1,4 @@
-var rect = {
-    parameter: (l,b) => (2*(l+b)),
-    area: (l,b) => (l*b)
-};
+var rect = require("./Ractangular");
 
 function solveRectangular(l,b) {
     console.log("L = " + l + " and B = " + b);
