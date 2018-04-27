@@ -2,26 +2,19 @@ var rect = require("./Ractangular");
 
 function solveRectangular(l,b) {
     console.log("L = " + l + " and B = " + b);
-    if(l <= 0 || b <= 0){
-        if(l <= 0){
-            console.log("L is Wrong ");
+    
+    rect(l,b, (er,rectrangular) => {
+        if(er) {
+            console.log("ERROR : " + er.message);
         }
-        else{
-            console.log("L = " + l);
+        else {
+            console.log("The Area : " + rectrangular.area());
+            console.log("The Perimeter : " + rectrangular.parameter());
         }
-        if(b <= 0){
-            console.log(" and B is Wrong ");
-        }
-        else{
-            console.log(" and B = " + b);
-        }
-    }
-    else{
-        console.log("The Rectangular is : " + rect.area(l,b));
-        console.log("The paremeter of this Rectangular is : " + rect.parameter(l,b));
-    }
-    console.log("");
-}
+    });
+
+    console.log("After call rect()");
+};
 
 solveRectangular(2,3);
 solveRectangular(5,3);
